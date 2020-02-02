@@ -16,10 +16,11 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
+
 /**
- * Displays a prompt “mytftp>” to the user and then accepts and executes commands
+ * Displays a prompt â€œmytftp>â€� to the user and then accepts and executes commands
  * by relaying the commands to the server and displaying the results and 
- * error messages. Runs until user enters the “quit” command.
+ * error messages. Runs until user enters the â€œquitâ€� command.
  * @author Christine McGee, Andrew Heywood, Matthew Singletary
  *
  */
@@ -57,7 +58,7 @@ public class FTPClientWorker implements Runnable{
 		this.sysFileSeparator = System.getProperty("file.separator");
     }	
 	
-	/* 
+	/**
 	 * Overrides the run() method from Runnable class and assigns the input
 	 * and output streams to variables. Creates loop to accept user commands
 	 * until quit is entered.
@@ -87,7 +88,6 @@ public class FTPClientWorker implements Runnable{
 					System.err.println("IOException for command while loop:  " + e + "\n" + e.getMessage());					
 				}
 			}
-		
 		}
 		catch(IOException e) {
 			System.err.println("Stream creation failed:  " + e + "\n" + e.getMessage());
@@ -114,7 +114,6 @@ public class FTPClientWorker implements Runnable{
 				if (clientsSocket != null) {
 					clientsSocket.close();
 				}
-
 			} 
 			catch (IOException e) {
 				System.err.println("IOException while trying to close streams:  " + e + "\n" + e.getMessage());
@@ -135,7 +134,6 @@ public class FTPClientWorker implements Runnable{
 		System.out.print("myftp> ");
         
     	while (userInputScanner.hasNextLine()) {
-    		
             
         	String commands = userInputScanner.nextLine();
         	String command = null;
@@ -162,35 +160,28 @@ public class FTPClientWorker implements Runnable{
         	// If else block to route the command
         	if (command.toUpperCase().equals("GET")) {
 
-        		getCommand(command, arguments);        		
-
+        		getCommand(command, arguments);
         	}
         	else if (command.toUpperCase().equals("PUT")) {	
         		
         		putCommand(command, arguments);
-        		
         	}
         	else if (command.toUpperCase().equals("LS")) {
         		
         		lsCommand(commands);
-        	
         	}
         	else if (command.toUpperCase().equals("QUIT")) {
         		
         		quitCommand(commands);
         		break;
-        	
         	}
         	else {
         		
         		remainingCommands(commands);
         	}
-
             
             System.out.print("\nmyftp> ");
-            
-        }		
-    
+    	}
     }  
 	 
 	/**
@@ -411,4 +402,3 @@ public class FTPClientWorker implements Runnable{
 		return serverResponse;
 	}
 }
-
