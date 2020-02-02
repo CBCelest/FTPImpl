@@ -1,8 +1,0 @@
-/**
- * 
- */
-/**
- * @author cowgi
- *
- */
-package FTPClient;
