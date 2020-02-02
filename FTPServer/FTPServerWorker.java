@@ -322,8 +322,6 @@ public class FTPServerWorker implements Runnable {
 				}
 			}
 		}
-
-
 	}
 
 	/**
@@ -353,8 +351,7 @@ public class FTPServerWorker implements Runnable {
 		}  
 		catch(Exception e) {  
 			e.printStackTrace();  
-		}  
-
+		}
 	}
 
 	/**
@@ -373,7 +370,6 @@ public class FTPServerWorker implements Runnable {
 			messageClient(file);
 
 		}
-
 	}
 
 	/**
@@ -411,7 +407,6 @@ public class FTPServerWorker implements Runnable {
 					return;
 				}
 			}
-
 		}
 
 		this.currentDirectory = directory;
