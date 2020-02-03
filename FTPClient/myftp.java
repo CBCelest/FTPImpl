@@ -38,7 +38,7 @@ public class myftp {
 		// if not inform them and exit.
 		if (args.length != 2) {
             System.err.println("Pass the machine name where the server resides and the port number");
-            System.err.println("Usage: myftp HOSTNAME PORTNUMBER");
+            System.err.println("Usage: myftp HOST NAME PORTNUMBER");
             System.exit(-1);;            
         }
         		
@@ -88,7 +88,9 @@ public class myftp {
        		     // Preserve interrupt status
        		     Thread.currentThread().interrupt();
        		   }
+
             }
+
         }
         catch (IOException e) {
             System.err.println("Input Output Exception: " + e.getMessage());
